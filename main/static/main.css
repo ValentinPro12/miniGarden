@@ -1,0 +1,67 @@
+.owo {
+    background-color: #5c636a;
+    width: 1439px;
+    height: 320px;
+    left: 1px;
+    top: 174px;
+}
+
+.benefits {
+
+}
+
+.text_by_round {
+    text-align: center;
+    margin-top: 50px;
+    width: fit-content;
+}
+
+.lap_number {
+    background: aqua;
+    border: 8px solid #ffff;
+    border-radius: 50%;
+    height: 88px;
+    width: 88px;
+    z-index: 10;
+    position: absolute;
+    bottom: -47px;
+    left: 60px;
+    font-size: 48px;
+    text-align: center;
+}
+
+.round {
+    border-radius: 100px; /* Радиус скругления */
+    border: 2px solid aqua;
+    padding: 10px;
+}
+
+.relative {
+    position: relative;
+}
+
+.circle {
+    position: absolute;
+    top: -15px;
+    left: -1px;
+    border-radius: 100px; /* Радиус скругления */
+    border: 3px solid green; /* Параметры рамки */
+    width: 13em;
+    height: 13em;
+}
+
+.margin-top {
+    margin-top: 50px;
+}
+
+.margin-right {
+    margin-right: 50px;
+}
+
+.margin-left {
+    margin-left: 50px;
+}
+
+.margin-bottom {
+    margin-bottom: 50px;
+}
