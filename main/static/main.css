@@ -1,17 +1,40 @@
+/*body {*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    font-size: 26px;*/
+/*}*/
+
 .owo {
     margin-bottom: 80px;
     background: linear-gradient(175.96deg, rgba(254, 111, 98, 0.97) -2.87%, rgba(241, 142, 133, 0.9) 69.81%, #F1D985 128.78%);
     width: 100%;
 }
+.sale {
+background: linear-gradient(175.96deg, #9BC40F -2.87%, rgba(164, 204, 26, 0.85) 60.47%, rgba(186, 210, 102, 0.97) 95.87%, #F1D985 128.78%);
+}
+
+.background {
+    background: url("../static/img/vector about us (1).svg") 50%;
+    min-height: 100%;
+    min-width: 640px;
+    height: auto;
+    position: absolute;
+    top: 35%;
+    left: 266px;
+}
+
 
 .bac {
-    background: url("../static/img/vector about us.svg");
+    background: url("../static/img/vector about us (1).svg") 50%;
+}
+
+.text_by_round_title {
+    white-space: pre-line;
 }
 
 .text_by_round {
     text-align: center;
     margin-top: 50px;
-    width: fit-content;
 }
 
 
@@ -69,13 +92,13 @@
     transition: transform 1s;
 }
 
-.hide:hover .relative {
-        transition: transform 3s;
+.hide:hover .lap_number {
+    transition: transform 10s;
     opacity: 1;
 }
 
-.hide:hover .relative {
-    transition: transform 3s;
+.hide:hover .lap_number {
+    transition: transform 10s;
     opacity: 0;
 }
 
@@ -113,4 +136,8 @@
 
 .m-b3 {
     margin-bottom: 30px;
+}
+
+.m-b6 {
+    margin-bottom: 60px;
 }
