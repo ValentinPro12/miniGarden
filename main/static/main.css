@@ -14,6 +14,7 @@
     width: fit-content;
 }
 
+
 .lap_number {
     background: aqua;
     border: 8px solid #ffff;
@@ -27,6 +28,7 @@
     font-size: 48px;
     text-align: center;
 }
+
 .round_number {
 
 }
@@ -64,10 +66,21 @@
 
 .img {
     width: 180px;
-       transition: transform 1s;
+    transition: transform 1s;
 }
 
-.img:hover  {
+.hide:hover .relative {
+        transition: transform 3s;
+    opacity: 1;
+}
+
+.hide:hover .relative {
+    transition: transform 3s;
+    opacity: 0;
+}
+
+
+.img:hover {
     border: none;
     transform: scale(1.3);
 }
