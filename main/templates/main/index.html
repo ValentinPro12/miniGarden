@@ -1,105 +1,94 @@
 {% extends "layout/basic.html" %}
 {% load static %}
 {% block content %}
-    <div class="container benefits m-5">
-        <p>Почему мы?</p>
-        <h2> Наши направления</h2>
-        <div class=" margin-top">
-            <div class="row relative">
-                <div class="col-sm">
-                    <div>
-                        <img class="round" src="{% static 'img/12071359_l-2015 2.png' %}" alt="">
-                        <div class="relative">
-                            <div class="lap_number ">1</div>
-                        </div>
-                        <div class="text_by_round">
-                        <span>
-                        Удобно
-                    </span>
-                            <div>Мы работаем с 9 до 19</div>
-                        </div>
+    <div class="container">
+        <div class="row m-b3 justify-content-center">
+            <div class="col-3">
+                <div class=" text-center">
+                    <img class=" img round border1" src="{% static 'img/12071359_l-2015 2-2.png' %}" alt="мальчик">
+                    <div class="relative">
+                        <div class="lap_number ">1</div>
+                    </div>
+                    <div class="text_by_round">
+
                     </div>
                 </div>
-                <div class="col-sm">
-                    <div>
-                        <img class="round" src="{% static 'img/12071359_l-2015 2.png' %}" alt="">
-                        <div class="relative">
-                            <div class="lap_number ">2</div>
-                        </div>
-                        <div class="text_by_round">
-                        <span>
-                        Безопасно
-                    </span>
-                            <div>Видеонаблюдение.<br> Закрытая территория</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div>
-                        <img class="round" src="{% static 'img/12071359_l-2015 2.png' %}" alt="">
-                        <div class="relative">
-                            <div class="lap_number ">3</div>
-                        </div>
-                        <div class="text_by_round">
-                        <span>
-                        Профессионально
-                    </span>
-                            <div>Квалифицированные<br>и опытные педагоги</div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
-        </div>
-        <div class=" margin-top">
-            <div class="row relative">
-                <div class="col-sm">
-                    <div>
-                        <img class="round" src="{% static 'img/12071359_l-2015 2.png' %}" alt="">
+            <div class="col-3">
+                <div class="text-center">
+                    <img class=" img  round border2" src="{% static 'img/12071359_l-2015 2-1.png' %}"
+                         alt="Учитель с ребенком">
+                    <div class="relative">
+                        <div class="lap_number ">2</div>
+                    </div>
+                    <div class="text_by_round">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-3">
+                <div class="text-center">
+                    <img class=" img round border3" src="{% static 'img/12071359_l-2015 2.png' %}" alt="помещение сада">
+                    <div class="relative">
+                        <div class="lap_number ">3</div>
+                    </div>
+                    <div class="text_by_round">
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row m-t3 justify-content-center">
+                <div class="col-3 ">
+                    <div class="text-center">
+                        <img class=" img round border4" src="{% static 'img/12071359_l-2015 2-2.png' %}" alt="мальчик">
                         <div class="relative">
                             <div class="lap_number ">4</div>
                         </div>
                         <div class="text_by_round">
-                        <span>
-                        Комфортно
-                    </span>
-                            <div>Небольшие группы,<br>до 10 детей</div>
+
                         </div>
                     </div>
+
                 </div>
-                <div class="col-sm">
-                    <div>
-                        <img class="round" src="{% static 'img/12071359_l-2015 2.png' %}" alt="">
+                <div class="col-3">
+                    <div class="text-center">
+                        <img class=" img round border5" src="{% static 'img/12071359_l-2015 2-1.png' %}"
+                             alt="Учитель с ребенком">
                         <div class="relative">
                             <div class="lap_number ">5</div>
                         </div>
                         <div class="text_by_round">
-                        <span>
-                        Вкусно
-                    </span>
-                            <div>4-х разовое горячее <br> питание</div>
+
                         </div>
+
                     </div>
                 </div>
-                <div class="col-sm">
-                    <div>
-                        <img class="round" src="{% static 'img/12071359_l-2015 2.png' %}" alt="">
+                <div class="col-3">
+                    <div class="text-center">
+                        <img class=" img round border6" src="{% static 'img/12071359_l-2015 2.png' %}"
+                             alt="помещение сада">
                         <div class="relative">
                             <div class="lap_number ">6</div>
                         </div>
                         <div class="text_by_round">
-                        <span>
-                        Уютно
-                    </span>
-                            <div>Домашняя обстановка <br> для обучения и развития</div>
+
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    {% for garden in gardens %}
-        {{ garden.title }}
-    {% endfor %}
+
+
+        {% for garden in gardens %}
+            {{ garden.title }}
+        {% endfor %}
+
+
 {% endblock %}
