@@ -1,31 +1,58 @@
-/*body {*/
-/*    font-style: normal;*/
-/*    font-weight: 500;*/
-/*    font-size: 26px;*/
-/*}*/
 
 .owo {
     margin-bottom: 80px;
     background: linear-gradient(175.96deg, rgba(254, 111, 98, 0.97) -2.87%, rgba(241, 142, 133, 0.9) 69.81%, #F1D985 128.78%);
     width: 100%;
 }
+
 .sale {
-background: linear-gradient(175.96deg, #9BC40F -2.87%, rgba(164, 204, 26, 0.85) 60.47%, rgba(186, 210, 102, 0.97) 95.87%, #F1D985 128.78%);
+    margin-top: 80px;
+    padding: 16px;
+    background: linear-gradient(175.96deg, #9BC40F -2.87%, rgba(164, 204, 26, 0.85) 60.47%, rgba(186, 210, 102, 0.97) 95.87%, #F1D985 128.78%);
+position: relative;
 }
-
-.background {
-    background: url("../static/img/vector about us (1).svg") 50%;
-    min-height: 100%;
-    min-width: 640px;
-    height: auto;
-    position: absolute;
-    top: 35%;
-    left: 266px;
-}
-
 
 .bac {
-    background: url("../static/img/vector about us (1).svg") 50%;
+    background: url("../static/img/vector about us (1).svg");
+}
+
+.font_p {
+    font-family: Poppins, serif;
+}
+
+
+.font_medium {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+
+.font_b {
+ font-family: 'Balsamiq Sans', cursive;
+}
+
+.font_color_w {
+    color: #ffffff;
+}
+
+.font_color {
+    color: #F18E85;
+}
+
+.font_bold_b {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.font_regular_b {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
 }
 
 .text_by_round_title {
@@ -52,15 +79,22 @@ background: linear-gradient(175.96deg, #9BC40F -2.87%, rgba(164, 204, 26, 0.85) 
     text-align: center;
 }
 
-.round_number {
-
-}
 
 .round {
     border-radius: 100px; /* Радиус скругления */
     padding: 10px;
 
 }
+
+
+.container_grid{
+      display: grid;
+  gap: 20px;
+
+  /* ! */
+  grid-template-columns: 200px auto 100px;
+}
+
 
 .border1 {
     border: 3px solid #BAD266;
@@ -122,6 +156,10 @@ background: linear-gradient(175.96deg, #9BC40F -2.87%, rgba(164, 204, 26, 0.85) 
     height: 13em;
 }
 
+.sale_border {
+    border: 2px dashed #FFFF;
+}
+
 .m-t3 {
     margin-top: 30px;
 }
@@ -134,10 +172,21 @@ background: linear-gradient(175.96deg, #9BC40F -2.87%, rgba(164, 204, 26, 0.85) 
     margin-left: 50px;
 }
 
+.m-l10 {
+    margin-left: 100px;
+}
+
 .m-b3 {
     margin-bottom: 30px;
 }
 
+.m-b4 {
+    margin-bottom: 40px;
+}
+
 .m-b6 {
     margin-bottom: 60px;
+}
+.p-b0 {
+    margin-bottom: 3px;
 }
