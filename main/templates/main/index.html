@@ -128,14 +128,14 @@
     <div class="sale">
         <div class="sale_border">
             <img class="boll_1" src="{% static 'img/boll_1.png' %}" alt="">
-            <div class="">
-                <div class="">
+            <div class="d-flex p-2 bd-highlight justify-content-evenly">
+                <div class="p-2 bd-highlight">
                     <div>
-                        <span class="font_p font_medium_b font_color_w">Набор в ФУТБОЛЬНУЮ СЕКЦИЮ!</span>
-{#                        <p class="font_p font_medium_b font_color_w">ФУТБОЛЬНУЮ СЕКЦИЮ!</p>#}
+                        <span class="font_p font_medium font_color_w">Набор в</span>
+                        <p class="font_p font_medium_b font_color_w">ФУТБОЛЬНУЮ СЕКЦИЮ!</p>
                     </div>
                 </div>
-                <div class="">
+                <div class="p-2 bd-highlight">
                     <div>
                         <div class="sale_contect">
                             <span class="font_b font_bold_b"> Все подробности и запись</span>
@@ -144,7 +144,7 @@
                     </div>
                 </div>
             </div>
-            <div class="">
+            <div class="d-inline-flex p-2 bd-highlight">
                 <div class="">
                     <span class="font_p font_medium_r font_color_w">
                         Только с мая по сентябрь
@@ -163,7 +163,18 @@
 
 
     {% for garden in gardens %}
-        {{ garden.title }}
+
+        {{ garden.age }} <br>
+        {{ garden.description }}<br>
+        {{ garden.price_for_one }}<br>
+        {{ garden.price_for_month }}<br>
+
+     {% for type in garden.types.all %}
+         {{ type.name }}
+
+     {% endfor %}
+
+
     {% endfor %}
 
 

@@ -1,6 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic.base import View
+
 from .models import *
+
+
+# class GardensView(View):
+#     def get(self, request):
+#         gardens = Gardens.objects.all()
+#         return render(request, 'main/index.html', {'gardens': gardens})
 
 
 def index(request):

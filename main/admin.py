@@ -11,3 +11,4 @@ class GardensAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Gardens)
+admin.site.register(Schedule)
