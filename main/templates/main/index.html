@@ -3,8 +3,9 @@
 {% block content %}
 
     {#why are we -------------------------------------------------------------#}
-    <div class=" container">
-        <div class="bac">
+    <div class="bac container">
+        <div class="">
+            {#            <img src="{% static 'img/vector about us (2).png' %}" alt="">#}
             <div class=" m-l10 m-b4">
                 <span class="font_b font_bold_b font_color">
                 Почему мы?
@@ -52,7 +53,7 @@
 
                 </div>
                 <div class="col-3">
-                    <div class="text-center hide">
+                    <div class="text-center">
                         <div class="hide">
                             <img class=" img round border3" src="{% static 'img/12071359_l-2015 2.png' %}"
                                  alt="помещение сада">
@@ -70,10 +71,10 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-3 ">
-                    <div class="text-center hide">
+                <div class="col-3">
+                    <div class="text-center">
                         <div class="hide">
-                            <img class=" img round border4" src="{% static 'img/12071359_l-2015 2-2.png' %}"
+                            <img class=" img round border4" src="{% static 'img/12071359_l-2015 2-5.png' %}"
                                  alt="мальчик">
                             <div class="relative">
                                 <div class="lap_number ">4</div>
@@ -90,7 +91,7 @@
                 <div class="col-3">
                     <div class="text-center">
                         <div class="hide">
-                            <img class=" img round border5" src="{% static 'img/12071359_l-2015 2-1.png' %}"
+                            <img class=" img round border5" src="{% static 'img/12071359_l-2015 2-3.png' %}"
                                  alt="Учитель с ребенком">
                             <div class="relative">
                                 <div class="lap_number ">5</div>
@@ -107,7 +108,7 @@
                 <div class="col-3">
                     <div class="text-center">
                         <div class="hide">
-                            <img class=" img round border6" src="{% static 'img/12071359_l-2015 2.png' %}"
+                            <img class=" img round border6" src="{% static 'img/12071359_l-2015 2-4.png' %}"
                                  alt="помещение сада">
                             <div class="relative">
                                 <div class="lap_number ">6</div>
@@ -125,57 +126,131 @@
     </div>
 
     {#sale---------------------------------------------------------------------#}
-    <div class="sale">
-        <div class="sale_border">
-            <img class="boll_1" src="{% static 'img/boll_1.png' %}" alt="">
-            <div class="d-flex p-2 bd-highlight justify-content-evenly">
-                <div class="p-2 bd-highlight">
-                    <div>
-                        <span class="font_p font_medium font_color_w">Набор в</span>
-                        <p class="font_p font_medium_b font_color_w">ФУТБОЛЬНУЮ СЕКЦИЮ!</p>
-                    </div>
-                </div>
-                <div class="p-2 bd-highlight">
-                    <div>
-                        <div class="sale_contect">
-                            <span class="font_b font_bold_b"> Все подробности и запись</span>
-                            <p class="font_b font_bold_b">по тел. 8 968 583 68 68 </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-inline-flex p-2 bd-highlight">
-                <div class="">
-                    <span class="font_p font_medium_r font_color_w">
-                        Только с мая по сентябрь
-                    </span>
-                    <div class="font_p font_medium_r font_color_w">
-                        тренировки под открытым небом с профессиональным тренером
-                    </div>
-                </div>
+    <div class="m-b8 m-t8 banner">
+        <img class="banner_cont" src="{% static 'img/Frame 1.png' %}" alt="">
+    </div>
+
+
+
+
+
+
+    {#Наши направления -----------------------------------------------------------------------------------#}
+    <div class="container">
+        <div class="m-l10 m-b4">
+                <span class="font_b font_bold_b font_color">
+               Что мы предлагаем?
+            </span>
+            <div class="font_b font_regular_b">
+                Наши направления
             </div>
         </div>
-
-        <img class="boll" src="{% static 'img/boll.png' %}" alt="">
+        {% for garden in gardens %}
+            <div class="card1">
+                <img src="{{ garden.poster.url }}" alt="">
+                <div class='schedule'>
+                    <div class="m-b3">Расписание:</div>
+                    <div class="scheduleItems">
+                        {% for type in garden.types.all %}
+                            <div class="item font_medium font_p">
+                                <div class="scheduleItems_item">
+                                    <img class="m-b3" src="{% static 'img/icon_ check.png' %}" alt="">
+                                    <div>{{ type.name }}</div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="price">
+                        <div>{{ garden.price_for_one }}/разовое посещение*</div>
+                        <div>{{ garden.price_for_month }}/месяц</div>
+                    </div>
+                </div>
+                <div class="info">
+                    <h2 class="infoHeader">{{ garden.title }}</h2>
+                    <div class="infoItems">
+                        <div class="time">
+                            <div class="timeTitle">Время:</div>
+                            <div class="timeInfo">
+                                {{ garden.time }}
+                            </div>
+                        </div>
+                        <div class="age">
+                            <div class="ageTitle">Возраст:</div>
+                            <div class="ageInfo"> {{ garden.age }}</div>
+                        </div>
+                        <div class="description">
+                            {{ garden.description }}
+                        </div>
+                        <button class="bouton">Записаться</button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-    </div>
 
 
 
-    {% for garden in gardens %}
-
-        {{ garden.age }} <br>
-        {{ garden.description }}<br>
-        {{ garden.price_for_one }}<br>
-        {{ garden.price_for_month }}<br>
-
-     {% for type in garden.types.all %}
-         {{ type.name }}
-
-     {% endfor %}
 
 
-    {% endfor %}
+
+    {#    <div class="container">#}
+    {#        <div class="card1">#}
+    {#            <div class="m-l10 m-b4">#}
+    {#                <span class="font_b font_bold_b font_color">#}
+    {#               Что мы предлагаем?#}
+    {#            </span>#}
+    {#                <div class="font_b font_regular_b">#}
+    {#                    Наши направления#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#        {% for garden in gardens %}#}
+    {#            <div>#}
+    {#                <div class="directions container_grid">#}
+    {#                    <div class="">#}
+    {#                        <img src="{{ garden.poster.url }}" alt=""></div>#}
+    {#                    <div class="directions_schedule">#}
+    {#                        <div> Расписание:</div>#}
+    {##}
+    {#                        <div class="directions_item">#}
+    {#                            {% for type in garden.types.all %}#}
+    {#                                <div class="">#}
+    {#                                    <span class="m-r17">#}
+    {#                                        <img class="m-b3" src="{% static 'img/icon_ check.png' %}" alt="">#}
+    {#                                    </span>#}
+    {#                                    <span class="pt-1">#}
+    {#                                {{ type.name }}#}
+    {#                            </span>#}
+    {##}
+    {#                                </div>#}
+    {#                            {% endfor %}#}
+    {#                        </div>#}
+    {##}
+    {##}
+    {#                        <div>#}
+    {#                            {{ garden.price_for_one }}#}
+    {#                            {{ garden.price_for_month }}#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {##}
+    {#                    <div class="">#}
+    {#                        <div>#}
+    {#                                 {{ garden.title }}#}
+    {#                        </div>#}
+    {#                        <div>\#}
+    {#                        </div>#}
+    {#                        {{ garden.title }}#}
+    {#                        {{ garden.time }}#}
+    {#                        {{ garden.age }}#}
+    {#                        {{ garden.description }}#}
+    {#                    </div>#}
+    {##}
+    {#                </div>#}
+    {#            </div>#}
+    {##}
+    {#        {% endfor %}#}
+    {#    </div>#}
+
 
 
 {% endblock %}
