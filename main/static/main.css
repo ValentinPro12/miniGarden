@@ -271,7 +271,7 @@
 }
 
 .card1 {
-
+margin-bottom: 60px;
   border: 1px solid black;
   border-radius: 22px;
   padding: 2rem;
@@ -303,14 +303,14 @@
     justify-content: space-between;
 }
 .scheduleItems_item {
-
+display: flex;
 }
 .item {
   width: 40%
 }
 
 .price {
-
+    margin-top: 76px;
 }
 
 .infoHeader {

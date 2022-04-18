@@ -146,6 +146,7 @@
             </div>
         </div>
         {% for garden in gardens %}
+            {% if garden.group_item == 'Детский сад' %}
             <div class="card1">
                 <img src="{{ garden.poster.url }}" alt="">
                 <div class='schedule'>
@@ -185,6 +186,88 @@
                     </div>
                 </div>
             </div>
+             {% elif garden.group_item == 'Развиващие курсы' %}
+
+                <div class="card1">
+                <img src="{{ garden.poster.url }}" alt="">
+                <div class='schedule'>
+                    <div class="m-b3">Расписание:</div>
+                    <div class="scheduleItems">
+                        {% for type in garden.types.all %}
+                            <div class="item font_medium font_p">
+                                <div class="scheduleItems_item">
+                                    <img class="m-b3" src="{% static 'img/icon_ check.png' %}" alt="">
+                                    <div>{{ type.name }}</div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="price">
+                        <div>{{ garden.price_for_one }}/разовое посещение*</div>
+                        <div>{{ garden.price_for_month }}/месяц</div>
+                    </div>
+                </div>
+                <div class="info">
+                    <h2 class="infoHeader">{{ garden.title }}</h2>
+                    <div class="infoItems">
+                        <div class="time">
+                            <div class="timeTitle">Время:</div>
+                            <div class="timeInfo">
+                                {{ garden.time }}
+                            </div>
+                        </div>
+                        <div class="age">
+                            <div class="ageTitle">Возраст:</div>
+                            <div class="ageInfo"> {{ garden.age }}</div>
+                        </div>
+                        <div class="description">
+                            {{ garden.description }}
+                        </div>
+                        <button class="bouton">Записаться</button>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+                     <div class="card1">
+                <img src="{{ garden.poster.url }}" alt="">
+                <div class='schedule'>
+                    <div class="m-b3">Расписание:</div>
+                    <div class="scheduleItems">
+                        {% for type in garden.types.all %}
+                            <div class="item font_medium font_p">
+                                <div class="scheduleItems_item">
+                                    <img class="m-b3" src="{% static 'img/icon_ check.png' %}" alt="">
+                                    <div>{{ type.name }}</div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="price">
+                        <div>{{ garden.price_for_one }}/разовое посещение*</div>
+                        <div>{{ garden.price_for_month }}/месяц</div>
+                    </div>
+                </div>
+                <div class="info">
+                    <h2 class="infoHeader">{{ garden.title }}</h2>
+                    <div class="infoItems">
+                        <div class="time">
+                            <div class="timeTitle">Время:</div>
+                            <div class="timeInfo">
+                                {{ garden.time }}
+                            </div>
+                        </div>
+                        <div class="age">
+                            <div class="ageTitle">Возраст:</div>
+                            <div class="ageInfo"> {{ garden.age }}</div>
+                        </div>
+                        <div class="description">
+                            {{ garden.description }}
+                        </div>
+                        <button class="bouton">Записаться</button>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         {% endfor %}
     </div>
 
