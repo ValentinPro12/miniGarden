@@ -5,16 +5,16 @@ from django.views.generic.base import View
 from .models import *
 
 
-# class GardensView(View):
-#     def get(self, request):
-#         gardens = Gardens.objects.all()
-#         return render(request, 'main/index.html', {'gardens': gardens})
+class GardensView(View):
+    def get(self, request):
+        gardens = Gardens.objects.all()
+        return render(request, 'main/index.html', {'gardens': gardens})
 
 
-def index(request):
-    gardens = Gardens.objects.all()
-    contex = {'gardens': gardens}
-    return render(request, 'main/index.html', contex)
+# def index(request):
+#     gardens = Gardens.objects.all()
+#     contex = {'gardens': gardens}
+#     return render(request, 'main/index.html', contex)
 
 
 def mini_garden(request):
