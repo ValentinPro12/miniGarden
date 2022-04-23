@@ -41,3 +41,21 @@ class Schedule(models.Model):
     class Meta:
         verbose_name_plural = 'Расписание'
         verbose_name = 'Расписания'
+
+
+class Lessons(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Название занятия')
+    age = models.CharField(max_length=50, verbose_name='Возрост с')
+    week = models.CharField(max_length=50, verbose_name='проходит по дням')
+    description = models.TextField(null=True, blank=True, verbose_name='Описание')
+    price_for_one = models.FloatField(null=True, blank=True, verbose_name='Цена за одно занятие')
+    price_for_month = models.FloatField(null=True, blank=True, verbose_name='Цена за месяц')
+    group = models.ForeignKey('Group', blank=True, default='', on_delete=models.CASCADE, verbose_name='')
+    lessons_poster = models.ImageField("Постер", blank=True, upload_to="lessons_poster")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Занятие'
+        verbose_name = 'Занятия'

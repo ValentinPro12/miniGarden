@@ -13,3 +13,4 @@ class GardensAdmin(admin.ModelAdmin):
 admin.site.register(Gardens)
 admin.site.register(Schedule)
 admin.site.register(Group)
+admin.site.register(Lessons)

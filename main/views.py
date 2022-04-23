@@ -5,10 +5,16 @@ from django.views.generic.base import View
 from .models import *
 
 
-class GardensView(View):
+class Grup:
+    def get_grup(self):
+        return Schedule.objects.all()
+
+
+class GardensView(Grup, View):
     def get(self, request):
         gardens = Gardens.objects.all()
-        return render(request, 'main/index.html', {'gardens': gardens})
+        lessons = Lessons.objects.all()
+        return render(request, 'main/index.html', {'gardens': gardens, 'lessons': lessons})
 
 
 # def index(request):

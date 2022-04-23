@@ -131,69 +131,108 @@
     </div>
 
 
-
-
-
-
     {#Наши направления -----------------------------------------------------------------------------------#}
-    <div class="container">
-        <div class=" m-b4">
+    <div class=" bac2">
+        <div class=" container">
+            <div class=" m-b4">
                 <span class="font_b font_bold_b font_color">
                Что мы предлагаем?
             </span>
-            <div class="font_b font_regular_b">
-                Наши направления
+                <div class="font_b font_regular_b">
+                    Наши направления
+                </div>
             </div>
-        </div>
 
-        <div>
-            <button class="button1" type="button" data-filter="all">All</button>
-        </div>
-        {% for garden in gardens %}
-            <div class="card1">
-                <img class="border_img" src="{{ garden.poster.url }}" alt="">
-                <div class='schedule'>
-                    <div class="m-b3 font_b text_title">Расписание:</div>
-                    <div class="scheduleItems">
-                        {% for type in garden.types.all %}
-                            <div class="item font_medium font_p">
-                                <div class="scheduleItems_item">
-                                    <img class="m-b3 " src="{% static 'img/icon_ check.png' %}" alt="">
-                                    <div class="p-a10 font_p scheduleItems_text">{{ type.name }}</div>
+            <div>
+                <button class="button1" type="button" data-filter="all">All</button>
+            </div>
+
+            {% for garden in gardens %}
+                <div class="card1">
+                    <img class="border_img" src="{{ garden.poster.url }}" alt="">
+                    <div class='schedule'>
+                        <div class="m-b3 font_b text_title">Расписание:</div>
+                        <div class="scheduleItems">
+                            {% for type in garden.types.all %}
+                                <div class="item font_medium font_p">
+                                    <div class="scheduleItems_item">
+                                        <img class="m-b1 " src="{% static 'img/icon_ check.png' %}" alt="">
+                                        <div class="p-a10 font_p scheduleItems_text">{{ type.name }}</div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="price price_text font_b">
+                            <div>{{ garden.price_for_one }}/разовое посещение*</div>
+                            <div>{{ garden.price_for_month }}/месяц</div>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h2 class="infoHeader infoHeader_name font_b">{{ garden.title }}</h2>
+                        <div class="infoItems">
+                            <div class="time font_p ">
+                                <div class="timeTitle font_b time_text">Время:</div>
+                                <div class="timeInfo age_text">
+                                    {{ garden.time }}
                                 </div>
                             </div>
-                        {% endfor %}
-                    </div>
-                    <div class="price price_text font_b">
-                        <div>{{ garden.price_for_one }}/разовое посещение*</div>
-                        <div>{{ garden.price_for_month }}/месяц</div>
+                            <div class="age font_p ">
+                                <div class="ageTitle font_b time_text">Возраст:</div>
+                                <div class="ageInfo age_text"> {{ garden.age }}</div>
+                            </div>
+                            <div class="description m-b6 font_p age_text">
+                                {{ garden.description }}
+                            </div>
+                            <button class="bouton">Записаться</button>
+                        </div>
                     </div>
                 </div>
-                <div class="info">
-                    <h2 class="infoHeader infoHeader_name font_b">{{ garden.title }}</h2>
-                    <div class="infoItems">
-                        <div class="time font_p ">
-                            <div class="timeTitle font_b time_text">Время:</div>
-                            <div class="timeInfo age_text">
-                                {{ garden.time }}
+            {% endfor %}
+
+            <div class="link font_b m-t4">
+                *При приобретении абонемента на 8 посещений
+            </div>
+
+
+
+            <div class="row m-t6">
+                          {% for lesson in lessons %}
+                <div class="col m-b6">
+                    <div class="card" style="width: 25rem;">
+                        <img  src="{{ lesson.lessons_poster.url }}" class="card-img-top border_img_top" alt="...">
+                        <div class="card-border">
+
+                            <div class="age_time card_text font_p">
+                                <div class="card-link">{{ lesson.age }}</div>
+                                <div class="card-link">{{ lesson.week }}</div>
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title  font_b"> {{ lesson.name }}</h5>
+                                <div class="card-text card_text font_p h"> <div>
+                                    {{ lesson.description }}
+                                </div></div>
+                                <div class="card-text card_text_f font_b m-b2">
+                                    <div class="">{{ lesson.price_for_one }}/пробное занятие</div>
+                                    <div class="">{{ lesson.price_for_month }}/занятие в абонементе*</div>
+                                </div>
+                                <div class="text-center">
+                                    <button class="bouton">Записаться</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="age font_p ">
-                            <div class="ageTitle font_b time_text">Возраст:</div>
-                            <div class="ageInfo age_text"> {{ garden.age }}</div>
-                        </div>
-                        <div class="description m-b6 font_p age_text">
-                            {{ garden.description }}
-                        </div>
-                        <button class="bouton">Записаться</button>
                     </div>
                 </div>
+                          {% endfor %}
+             <div class="col">
+                 <img src="{% static 'img/logo (4).png' %}" alt="">
+                 <div>
             </div>
-        {% endfor %}
-        <div>
-            *При приобретении абонемента на 8 посещений
+
         </div>
     </div>
+    {#занятия---------------------------------------------------------------------------------------------------#}
+
 
 
 
