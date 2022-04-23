@@ -213,8 +213,13 @@
                                     {{ lesson.description }}
                                 </div></div>
                                 <div class="card-text card_text_f font_b m-b2">
-                                    <div class="">{{ lesson.price_for_one }}/пробное занятие</div>
+                                    {% if lesson.price_for_one and lesson.price_for_month != null %}
+                                        <div class="">{{ lesson.price_for_one }}/пробное занятие</div>
                                     <div class="">{{ lesson.price_for_month }}/занятие в абонементе*</div>
+                                        {% else %}
+                                          <div class="">{{ lesson.price_for_month }}/занятие в абонементе*</div>
+                                    {% endif %}
+
                                 </div>
                                 <div class="text-center">
                                     <button class="bouton">Записаться</button>
