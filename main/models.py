@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Group(models.Model):
+class Category(models.Model):
     group_name = models.CharField(max_length=50, verbose_name='Категория', blank=True, null=True, )
 
     def __str__(self):
@@ -19,9 +19,9 @@ class Gardens(models.Model):
     description = models.TextField(null=True, blank=True, verbose_name='Описание')
     price_for_one = models.FloatField(null=True, blank=True, verbose_name='Цена за одно занятие')
     price_for_month = models.FloatField(null=True, blank=True, verbose_name='Цена за месяц')
-    types = models.ManyToManyField('Schedule', related_name='type')
+    types = models.ManyToManyField('Schedule', related_name='type',null=True, blank=True,)
     poster = models.ImageField("Постер", blank=True, upload_to="posters")
-    group = models.ForeignKey('Group', blank=True, default='', on_delete=models.CASCADE, verbose_name='')
+    group = models.ForeignKey('Category', blank=True, default='', on_delete=models.CASCADE, verbose_name='')
 
     def __str__(self):
         return self.title
@@ -50,7 +50,7 @@ class Lessons(models.Model):
     description = models.TextField(null=True, blank=True, verbose_name='Описание')
     price_for_one = models.FloatField(null=True, blank=True, verbose_name='Цена за одно занятие')
     price_for_month = models.FloatField(null=True, blank=True, verbose_name='Цена за месяц')
-    group = models.ForeignKey('Group', blank=True, default='', on_delete=models.CASCADE, verbose_name='')
+    group = models.ForeignKey('Category', blank=True, default='', on_delete=models.CASCADE, verbose_name='')
     lessons_poster = models.ImageField("Постер", blank=True, upload_to="lessons_poster")
 
     def __str__(self):
