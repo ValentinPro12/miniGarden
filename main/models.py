@@ -1,8 +1,10 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
     group_name = models.CharField(max_length=50, verbose_name='Категория', blank=True, null=True, )
+    slug = models.SlugField(max_length=100, unique=True, blank=True, null=True,)
 
     def __str__(self):
         return self.group_name
@@ -10,6 +12,9 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Категории'
         verbose_name = 'Категория'
+
+    def get_absolute_url(self):
+        return reverse('main:product_list_by_category', args=[self.slug])
 
 
 class Gardens(models.Model):
@@ -19,7 +24,7 @@ class Gardens(models.Model):
     description = models.TextField(null=True, blank=True, verbose_name='Описание')
     price_for_one = models.FloatField(null=True, blank=True, verbose_name='Цена за одно занятие')
     price_for_month = models.FloatField(null=True, blank=True, verbose_name='Цена за месяц')
-    types = models.ManyToManyField('Schedule', related_name='type',null=True, blank=True,)
+    types = models.ManyToManyField('Schedule', related_name='type', null=True, blank=True, )
     poster = models.ImageField("Постер", blank=True, upload_to="posters")
     group = models.ForeignKey('Category', blank=True, default='', on_delete=models.CASCADE, verbose_name='')
 
