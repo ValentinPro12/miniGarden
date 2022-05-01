@@ -1,8 +1,60 @@
 
 .owo {
+    background-image: url("../static/img/background banner.png");
     margin-bottom: 80px;
-    background: linear-gradient(175.96deg, rgba(254, 111, 98, 0.97) -2.87%, rgba(241, 142, 133, 0.9) 69.81%, #F1D985 128.78%);
+    background-color: #F18E85;
     width: 100%;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 573px;
+}
+
+.title-garden_item {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-size: 55px;
+    line-height: 82px;
+    color: #FFFFFF;
+}
+
+.title-item1 {
+    font-weight: 500;
+}
+
+.title-item2 {
+    font-weight: 700;
+}
+
+.offer {
+    margin-top: 23px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+        margin-bottom: 37px;
+}
+
+.btn_offer {
+    background: linear-gradient(90.86deg, #FABD20 1.75%, #FFD363 97.81%);
+    box-shadow: 3px 4px 5px rgba(171, 134, 39, 0.29);
+    border-radius: 166px;
+    font-family: 'Balsamiq Sans', cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    align-items: center;
+    text-align: center;
+    padding: 17px 41px 17px 41px;
+}
+
+.pa {
+    position: absolute;
+    right: 122px;
+    top: 100px;
 }
 
 .sale {
@@ -129,7 +181,7 @@
     z-index: 10;
     position: absolute;
     bottom: -47px;
-    left: 105px;
+    left: 162px;
     font-size: 48px;
     text-align: center;
 }
@@ -430,7 +482,15 @@
     display: flex;
     justify-content: space-between;
 }
-
+.card2 {
+    margin-top: 60px;
+    border: 1px solid black;
+    border-radius: 22px;
+    padding: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+  height: 100%;
+}
 
 .info {
     width: 33%
@@ -538,8 +598,41 @@
     width: 145px;
 }
 
-@media screen and (max-width: 1440px) {
-    .media {
-        margin-left: 100px;
+.card_w {
+    width: 25rem;
+}
+
+@media (min-width: 720px) and (max-width: 719px) {
+    .lap_number {
+        left: 187px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 990px) {
+    .owo {
+        background-image: none;
+        margin-bottom: 80px;
+        background-color: #F18E85;
+
+    }
+
+    .pa {
+        display: none;
+    }
+
+    .card_w {
+        width: auto;
+    }
+
+    .bac {
+        background-image: none;
+    }
+
+    .lap_number {
+        left: 187px;
+    }
+
+    .mm-b6 {
+        margin-bottom: 60px;
     }
 }

@@ -3,7 +3,7 @@
 {% block content %}
 
     {#why are we -------------------------------------------------------------#}
-    <div class="bac container">
+    <div class="bac  container-lg">
         <div class="">
             {#            <img src="{% static 'img/vector about us (2).png' %}" alt="">#}
             <div class=" m-l10 m-b4">
@@ -14,7 +14,7 @@
                     Наши преимущества
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row row-cols-lg-3 row-cols-sm-2 justify-content-center">
                 <div class="col-3">
                     <div class=" text-center m-b6">
                         <div class="hide">
@@ -53,7 +53,7 @@
 
                 </div>
                 <div class="col-3">
-                    <div class="text-center">
+                    <div class="text-center mm-b6">
                         <div class="hide">
                             <img class=" img round border3" src="{% static 'img/12071359_l-2015 2.png' %}"
                                  alt="помещение сада">
@@ -69,10 +69,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-center">
                 <div class="col-3">
-                    <div class="text-center">
+                    <div class="text-center mm-b6">
                         <div class="hide">
                             <img class=" img round border4" src="{% static 'img/12071359_l-2015 2-5.png' %}"
                                  alt="мальчик">
@@ -89,7 +87,7 @@
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="text-center">
+                    <div class="text-center mm-b6">
                         <div class="hide">
                             <img class=" img round border5" src="{% static 'img/12071359_l-2015 2-3.png' %}"
                                  alt="Учитель с ребенком">
@@ -106,7 +104,7 @@
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="text-center">
+                    <div class="text-center mm-b6">
                         <div class="hide">
                             <img class=" img round border6" src="{% static 'img/12071359_l-2015 2-4.png' %}"
                                  alt="помещение сада">
@@ -122,6 +120,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -133,8 +132,8 @@
 
     {#Наши направления -----------------------------------------------------------------------------------#}
     <div class=" bac2">
-        <div id="part1"  class=" container">
-            <div  class=" m-b4">
+        <div id="part1" class=" container">
+            <div class=" m-b4">
                 <span class="font_b font_bold_b font_color">
                Что мы предлагаем?
             </span>
@@ -153,7 +152,8 @@
                                 {% for type in garden.types.all %}
                                     <div class="item font_medium font_p">
                                         <div class="scheduleItems_item">
-                                            <div><img class="m-b1 " src="{% static 'img/icon_ check.png' %}" alt=""></div>
+                                            <div><img class="m-b1 " src="{% static 'img/icon_ check.png' %}" alt="">
+                                            </div>
                                             <div class="p-a10 font_p scheduleItems_text">{{ type.name }}</div>
                                         </div>
                                     </div>
@@ -185,103 +185,81 @@
                         </div>
                     </div>
 
-                    {% elif garden.group.id > 1 %}
+                {% elif garden.group.id > 1 %}
 
 
- {% if forloop.counter0|divisibleby:3 %} <div class="row "> {%  endif %}
-           <div class="category-a col-4 col-sm-12 col-xxl-4 col-xl-4 m-b6">
-                            <div class="card" style="width: 25rem;">
-                                <img src="{{ garden.poster.url }}" class="card-img-top border_img_top" alt="...">
-                                <div class="card-border">
-                                    <div class="age_time card_text font_p">
-                                        <div class="card-link">{{ garden.age }}</div>
-                                        <div class="card-link">{{ garden.time }}</div>
-                                    </div>
+                    {% if forloop.counter0|divisibleby:3 %}
+                        <div class="row row-cols-1 row-cols-sm-3"> {% endif %}
+                <div class="category-a col-4 col-sm-12 col-xxl-4 col-xl-4 m-b6">
+                    <div class="card card_w">
+                        <img src="{{ garden.poster.url }}" class="card-img-top border_img_top" alt="...">
+                        <div class="card-border">
+                            <div class="age_time card_text font_p">
+                                <div class="card-link">{{ garden.age }}</div>
+                                <div class="card-link">{{ garden.time }}</div>
+                            </div>
 
-                                    <div class="card-body">
-                                        <h5 class="card-title  font_b"> {{ garden.title }}</h5>
-                                        <div class="card-text card_text font_p h">
-                                            <div>
-                                                {{ garden.description }}
-                                            </div>
-                                        </div>
-                                        <div class="card-text card_text_f font_b m-b2">
-                                            {% if garden.price_for_one and garden.price_for_month != null %}
-                                                <div class="">{{ garden.price_for_one }}/пробное занятие</div>
-                                                <div class="">{{ garden.price_for_month }}/занятие в абонементе*
-                                                </div>
-                                            {% else %}
-                                                <div class="">{{ garden.price_for_month }}/занятие в абонементе*
-                                                </div>
-                                            {% endif %}
-
-                                        </div>
-                                        <div class="text-center">
-                                            <button class="bouton">Записаться</button>
-                                        </div>
+                            <div class="card-body">
+                                <h5 class="card-title  font_b"> {{ garden.title }}</h5>
+                                <div class="card-text card_text font_p h">
+                                    <div>
+                                        {{ garden.description }}
                                     </div>
                                 </div>
+                                <div class="card-text card_text_f font_b m-b2">
+                                    {% if garden.price_for_one and garden.price_for_month != null %}
+                                        <div class="">{{ garden.price_for_one }}/пробное занятие</div>
+                                        <div class="">{{ garden.price_for_month }}/занятие в абонементе*
+                                        </div>
+                                    {% else %}
+                                        <div class="">{{ garden.price_for_month }}/занятие в абонементе*
+                                        </div>
+                                    {% endif %}
 
+                                </div>
+                                <div class="text-center">
+                                    <button class="bouton">Записаться</button>
+                                </div>
                             </div>
                         </div>
-                     {% if forloop.last  %}
-                        <div class="col-4 col-sm-12 col-xxl-4 col-xl-4 m-b6">
+
+                    </div>
+                </div>
+                {#                    end col#}
+                {% if forloop.last %}
+                    <div class="col-4 col-sm-12 col-xxl-4 col-xl-4 m-b6">
                         <img src="{% static 'img/logo (4).png' %}" alt="">
                     </div>
-                    {% endif %}
+                {% endif %}
 
-            {%  if forloop.counter|divisibleby:3 or forloop.last %}</div> {%  endif %}
+                {% if forloop.counter|divisibleby:3 or forloop.last %}</div>{% endif %}
 
                 {% endif %}
             {% endfor %}
 
-{#            <div class="row m-t6">#}
-{#                {% for garden in products %}#}
-{#                    {% if garden.group.id != 1 %}#}
-{#                    {% if garden.group.id == 2 %}#}
-{#                        <div class="category-a col-4 col-sm-12 col-xxl-4 col-xl-4 m-b6">#}
-{#                            <div class="card" style="width: 25rem;">#}
-{#                                <img src="{{ garden.poster.url }}" class="card-img-top border_img_top" alt="...">#}
-{#                                <div class="card-border">#}
-{#                                    <div class="age_time card_text font_p">#}
-{#                                        <div class="card-link">{{ garden.age }}</div>#}
-{#                                        <div class="card-link">{{ garden.time }}</div>#}
-{#                                    </div>#}
-{##}
-{#                                    <div class="card-body">#}
-{#                                        <h5 class="card-title  font_b"> {{ garden.title }}</h5>#}
-{#                                        <div class="card-text card_text font_p h">#}
-{#                                            <div>#}
-{#                                                {{ garden.description }}#}
-{#                                            </div>#}
-{#                                        </div>#}
-{#                                        <div class="card-text card_text_f font_b m-b2">#}
-{#                                            {% if garden.price_for_one and garden.price_for_month != null %}#}
-{#                                                <div class="">{{ garden.price_for_one }}/пробное занятие</div>#}
-{#                                                <div class="">{{ garden.price_for_month }}/занятие в абонементе*#}
-{#                                                </div>#}
-{#                                            {% else %}#}
-{#                                                <div class="">{{ garden.price_for_month }}/занятие в абонементе*#}
-{#                                                </div>#}
-{#                                            {% endif %}#}
-{##}
-{#                                        </div>#}
-{#                                        <div class="text-center">#}
-{#                                            <button class="bouton">Записаться</button>#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{##}
-{#                            </div>#}
-{#                        </div>#}
-{#                    {% endif %}#}
-{#                    {% endif %}#}
-{#                {% endfor %}#}
-{#            </div>#}
 
             <div class="link font_b">
                 *При приобретении абонемента на 8 занятий
             </div>
 
+            <div class="card2 m-b1 ">
+
+                <div>
+                    <img class="border_img" src="{% static 'img/12071359_l-2015 1.png' %}" alt="">
+                </div>
+                <div>
+                     <div>Организация и проведение праздника</div>
+                    <div class="card_cont">
+                        <div class="card_cont_item">
+                            2
+                        </div>
+                        <div class="card_cont_item">
+                            1
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
             {#занятия---------------------------------------------------------------------------------------------------#}
 {% endblock %}
