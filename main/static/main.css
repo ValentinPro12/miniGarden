@@ -302,11 +302,13 @@
 !important;
 
 }
-.h{
+
+.h {
     height: 100px;
 }
+
 .card-border {
-height: 320px;
+    height: 320px;
     padding-top: 28px;
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
@@ -449,6 +451,10 @@ height: 320px;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    gap: 10px;
+    gap: 10px 20px; /* row-gap column gap */
+    row-gap: 10px;
+    column-gap: 20px;
 }
 
 .scheduleItems_item {
@@ -460,7 +466,7 @@ height: 320px;
 }
 
 .price {
-    margin-top: 150px;
+    margin-bottom: 4em;
 }
 
 .infoHeader {

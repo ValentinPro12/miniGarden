@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400&display=swap"
           rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.js"></script>
-<script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
 </head>
 <body>
 <div class="owo">
@@ -23,14 +23,39 @@
                     <img src="{% static 'img/logo (3).png' %}" alt="">
                 </div>
             </a>
-            <a class="me-3 py-2 text-dark text-decoration-none" href=''>Главная</a>
-{#            <a class="me-3 py-2 text-dark text-decoration-none" href='{% url 'mini_garden' %}'>Мини сад</a>#}
-{#            <a class="me-3 py-2 text-dark text-decoration-none" href='{% url 'family_class' %}'>Семейный класс</a>#}
-{#            <a class="me-3 py-2 text-dark text-decoration-none" href='{% url 'schedule' %}'>Расписание</a>#}
-{#            <a class="me-3 py-2 text-dark text-decoration-none" href='{% url 'contacts' %}'>Контакты</a>#}
+            <a class="me-3 py-2 text-dark text-decoration-none" href=''>О нас</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href='#part1'>Детский сад</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href=''>Занятия</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href=''>Галерея</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href=''>Расписание</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href=''>Контакты</a>
         </div>
     </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="title-garden">
+                    Детский клуб
+                    Любопытная Варвара
+                </div>
+                <div class="offer">
+                    При записи на сайте -
+                    пробное занятие бесплатно!
+                </div>
+                <batten class="btn_offer">Попробовать бесплатно</batten>
+            </div>
+            <div class="col">
+                <div>
+                    <img src="{% static 'img/photo_2022-04-12_11-02-26 3.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 
 
 {% block content %}

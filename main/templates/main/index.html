@@ -133,8 +133,8 @@
 
     {#Наши направления -----------------------------------------------------------------------------------#}
     <div class=" bac2">
-        <div class=" container">
-            <div class=" m-b4">
+        <div id="part1"  class=" container">
+            <div  class=" m-b4">
                 <span class="font_b font_bold_b font_color">
                Что мы предлагаем?
             </span>
@@ -143,38 +143,23 @@
                 </div>
             </div>
 
-
-
-
-            {% for c in categories %}
-                {{ c.group_name }}
-
-            {% endfor %}
-{#{% for o in products %}#}
-{#   {% if forloop.first %} <div class="row">#}
-{#        <div class=" col">1</div>#}
-{#        <div class=" col">1</div>#}
-{#    </div>#}
-{##}
-{#{% endfor %}#}
-
             {% for garden in products %}
                 {% if garden.group.id == 1 %}
-                    <div class="card1">
-                        <img class="border_img" src="{{ garden.poster.url }}" alt="">
+                    <div class="card1 m-b1 ">
+                        <div><img class="border_img" src="{{ garden.poster.url }}" alt=""></div>
                         <div class='schedule'>
                             <div class="m-b3 font_b text_title">Расписание:</div>
-                            <div class="scheduleItems">
+                            <div class="scheduleItems price">
                                 {% for type in garden.types.all %}
                                     <div class="item font_medium font_p">
                                         <div class="scheduleItems_item">
-                                            <img class="m-b1 " src="{% static 'img/icon_ check.png' %}" alt="">
+                                            <div><img class="m-b1 " src="{% static 'img/icon_ check.png' %}" alt=""></div>
                                             <div class="p-a10 font_p scheduleItems_text">{{ type.name }}</div>
                                         </div>
                                     </div>
                                 {% endfor %}
                             </div>
-                            <div class="price price_text font_b">
+                            <div class=" price_text font_b">
                                 <div>{{ garden.price_for_one }}/разовое посещение*</div>
                                 <div>{{ garden.price_for_month }}/месяц</div>
                             </div>
@@ -203,7 +188,7 @@
                     {% elif garden.group.id > 1 %}
 
 
- {% if forloop.counter0|divisibleby:3 %} <div class="row m-t6"> {%  endif %}
+ {% if forloop.counter0|divisibleby:3 %} <div class="row "> {%  endif %}
            <div class="category-a col-4 col-sm-12 col-xxl-4 col-xl-4 m-b6">
                             <div class="card" style="width: 25rem;">
                                 <img src="{{ garden.poster.url }}" class="card-img-top border_img_top" alt="...">
@@ -239,7 +224,13 @@
 
                             </div>
                         </div>
-            {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing --><hr>{%  endif %}
+                     {% if forloop.last  %}
+                        <div class="col-4 col-sm-12 col-xxl-4 col-xl-4 m-b6">
+                        <img src="{% static 'img/logo (4).png' %}" alt="">
+                    </div>
+                    {% endif %}
+
+            {%  if forloop.counter|divisibleby:3 or forloop.last %}</div> {%  endif %}
 
                 {% endif %}
             {% endfor %}
